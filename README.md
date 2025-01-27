@@ -1,16 +1,9 @@
-# tradervolt_task
+TRADERVOLT Task 
 
-A new Flutter project.
+This project is only one pagthat shows a financial trading application interface, specifically displaying live currency exchange rates for various currency pairs.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Deliverables on this task are: 
+1. Follows clean code practices.
+2. Uses Bloc for state management.
+3. Displays and updates symbols in real-time with proper UI feedback based on WebSocket updates. 
