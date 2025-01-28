@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.example.tradervolt_task"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = 34
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
