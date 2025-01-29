@@ -43,6 +43,7 @@ dependencies:
   dio: ^5.7.0
   retrofit: ^4.4.2
   pretty_dio_logger: ^1.4.0
+  web_socket_channel: 
   # Code generator (mainly used with cubit)
   freezed:
   freezed_annotation:
@@ -51,6 +52,10 @@ dependencies:
   json_annotation:
   #theming
   flutter_screenutil: ^5.9.3
+  # for dependency injection
+  get_it:
+  # easy way to add shimmer effect
+  shimmer: 
 
 dev_dependencies:
   flutter_test:

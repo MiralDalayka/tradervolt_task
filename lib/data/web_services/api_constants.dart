@@ -7,4 +7,9 @@ class ApiConstants {
 //todo: temp
   static const String apiKeyHeader = "X-API-KEY";
   static const String apiKeyValue = "Aa123!@#";
+
+  static const headers = {
+    'Content-Type': 'application/json',
+    apiKeyHeader: apiKeyValue
+  };
 }

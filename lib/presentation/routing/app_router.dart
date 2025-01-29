@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tradervolt_task/business_logic/cubit/symbol_cubit.dart';
+import 'package:tradervolt_task/data/di.dart';
 import 'package:tradervolt_task/presentation/screens/all_symbols.dart';
 
 import 'routes.dart';
@@ -8,7 +11,12 @@ class AppRouter {
     switch (settings.name) {
       case Routes.allSymbolsScreen:
         {
-          return _route(const AllSymbolsScreen());
+          return _route(
+            BlocProvider(
+              create: (context) => SymbolCubit(getIt())..getSymbols(),
+              child: const AllSymbolsScreen(),
+            ),
+          );
         }
 
       default:

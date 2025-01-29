@@ -12,10 +12,10 @@ class ApiErrorHandler {
           return ApiErrorModel(message: "Request to the server was cancelled");
         case DioExceptionType.connectionTimeout:
           return ApiErrorModel(message: "Connection timeout with the server");
-        case DioExceptionType.unknown:
-          return ApiErrorModel(
-              message:
-                  "Connection to the server failed due to internet connection");
+        // case DioExceptionType.unknown:
+        //   return ApiErrorModel(
+        //       message:
+        //           "Connection to the server failed due to internet connection");
         case DioExceptionType.receiveTimeout:
           return ApiErrorModel(
               message: "Receive timeout in connection with the server");
@@ -37,6 +37,5 @@ ApiErrorModel _handleError(dynamic data) {
   return ApiErrorModel(
     message: data['message'] ?? "Unknown error occurred",
     code: data['code'],
-    errors: data['data'],
   );
 }
