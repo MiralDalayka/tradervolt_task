@@ -15,11 +15,19 @@ class DioFactory {
       dio!
         ..options.connectTimeout = timeOut
         ..options.receiveTimeout = timeOut;
+      addDioHeaders();
       addDioInterceptor();
       return dio!;
     } else {
       return dio!;
     }
+  }
+
+  static void addDioHeaders() async {
+    dio?.options.headers = {
+      'Content-Type': 'application/json',
+      'X-API-KEY': 'Aa123!@#' //TODO make it hidden
+    };
   }
 
   static void addDioInterceptor() {
