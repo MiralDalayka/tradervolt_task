@@ -11,8 +11,7 @@ final getIt = GetIt.instance;
 
 Future<void> setupGetIt() async {
   Dio dio = DioFactory.getDio();
-  getIt.registerLazySingleton<SymbolEventsServiceImp>(
-      () => SymbolEventsServiceImp());
+  getIt.registerFactory<SymbolEventsServiceImp>(() => SymbolEventsServiceImp());
   getIt.registerLazySingleton<ApiService>(() => ApiServiceImpl(dio));
   getIt.registerLazySingleton<SymbolRepo>(() => SymbolRepo(getIt()));
   // Register Repositories

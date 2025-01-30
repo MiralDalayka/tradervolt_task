@@ -20,8 +20,6 @@ SymbolModel _$SymbolModelFromJson(Map<String, dynamic> json) => SymbolModel(
       digits: (json['digits'] as num).toInt(),
       spreadCalculation: (json['spreadCalculation'] as num).toInt(),
       visible: json['visible'] as bool,
-      bidColor: json['bidColor'],
-      askColor: json['askColor'],
     );
 
 Map<String, dynamic> _$SymbolModelToJson(SymbolModel instance) =>
@@ -39,6 +37,4 @@ Map<String, dynamic> _$SymbolModelToJson(SymbolModel instance) =>
       'digits': instance.digits,
       'spreadCalculation': instance.spreadCalculation,
       'visible': instance.visible,
-      'bidColor': instance.bidColor,
-      'askColor': instance.askColor,
     };

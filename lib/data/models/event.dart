@@ -16,17 +16,17 @@ class EventDateResponse {
 @JsonSerializable()
 class Price {
   final int symbolId;
-  final double bid;
-  final double ask;
-  final double high;
-  final double low;
+  final double? bid;
+  final double? ask;
+  final double? high;
+  final double? low;
 
   Price({
     required this.symbolId,
-    required this.bid,
-    required this.ask,
-    required this.high,
-    required this.low,
+    this.bid,
+    this.ask,
+    this.high,
+    this.low,
   });
 
   factory Price.fromJson(Map<String, dynamic> json) => _$PriceFromJson(json);
