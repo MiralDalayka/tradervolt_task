@@ -23,7 +23,6 @@ mixin _$SymbolState {
     required TResult Function(List<SymbolModel>? symbolsDataList)
         symbolsSuccess,
     required TResult Function(ApiErrorModel apiErrorModel) symbolsError,
-    required TResult Function(EventData eventData) symbolEventUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,7 +31,6 @@ mixin _$SymbolState {
     TResult? Function()? symbolsLoading,
     TResult? Function(List<SymbolModel>? symbolsDataList)? symbolsSuccess,
     TResult? Function(ApiErrorModel apiErrorModel)? symbolsError,
-    TResult? Function(EventData eventData)? symbolEventUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,7 +39,6 @@ mixin _$SymbolState {
     TResult Function()? symbolsLoading,
     TResult Function(List<SymbolModel>? symbolsDataList)? symbolsSuccess,
     TResult Function(ApiErrorModel apiErrorModel)? symbolsError,
-    TResult Function(EventData eventData)? symbolEventUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -51,7 +48,6 @@ mixin _$SymbolState {
     required TResult Function(SymbolsLoading value) symbolsLoading,
     required TResult Function(SymbolsSuccess value) symbolsSuccess,
     required TResult Function(SymbolsError value) symbolsError,
-    required TResult Function(SymbolEventUpdated value) symbolEventUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,7 +56,6 @@ mixin _$SymbolState {
     TResult? Function(SymbolsLoading value)? symbolsLoading,
     TResult? Function(SymbolsSuccess value)? symbolsSuccess,
     TResult? Function(SymbolsError value)? symbolsError,
-    TResult? Function(SymbolEventUpdated value)? symbolEventUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,7 +64,6 @@ mixin _$SymbolState {
     TResult Function(SymbolsLoading value)? symbolsLoading,
     TResult Function(SymbolsSuccess value)? symbolsSuccess,
     TResult Function(SymbolsError value)? symbolsError,
-    TResult Function(SymbolEventUpdated value)? symbolEventUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -142,7 +136,6 @@ class _$InitialImpl implements _Initial {
     required TResult Function(List<SymbolModel>? symbolsDataList)
         symbolsSuccess,
     required TResult Function(ApiErrorModel apiErrorModel) symbolsError,
-    required TResult Function(EventData eventData) symbolEventUpdated,
   }) {
     return initial();
   }
@@ -154,7 +147,6 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? symbolsLoading,
     TResult? Function(List<SymbolModel>? symbolsDataList)? symbolsSuccess,
     TResult? Function(ApiErrorModel apiErrorModel)? symbolsError,
-    TResult? Function(EventData eventData)? symbolEventUpdated,
   }) {
     return initial?.call();
   }
@@ -166,7 +158,6 @@ class _$InitialImpl implements _Initial {
     TResult Function()? symbolsLoading,
     TResult Function(List<SymbolModel>? symbolsDataList)? symbolsSuccess,
     TResult Function(ApiErrorModel apiErrorModel)? symbolsError,
-    TResult Function(EventData eventData)? symbolEventUpdated,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -182,7 +173,6 @@ class _$InitialImpl implements _Initial {
     required TResult Function(SymbolsLoading value) symbolsLoading,
     required TResult Function(SymbolsSuccess value) symbolsSuccess,
     required TResult Function(SymbolsError value) symbolsError,
-    required TResult Function(SymbolEventUpdated value) symbolEventUpdated,
   }) {
     return initial(this);
   }
@@ -194,7 +184,6 @@ class _$InitialImpl implements _Initial {
     TResult? Function(SymbolsLoading value)? symbolsLoading,
     TResult? Function(SymbolsSuccess value)? symbolsSuccess,
     TResult? Function(SymbolsError value)? symbolsError,
-    TResult? Function(SymbolEventUpdated value)? symbolEventUpdated,
   }) {
     return initial?.call(this);
   }
@@ -206,7 +195,6 @@ class _$InitialImpl implements _Initial {
     TResult Function(SymbolsLoading value)? symbolsLoading,
     TResult Function(SymbolsSuccess value)? symbolsSuccess,
     TResult Function(SymbolsError value)? symbolsError,
-    TResult Function(SymbolEventUpdated value)? symbolEventUpdated,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -266,7 +254,6 @@ class _$SymbolsLoadingImpl implements SymbolsLoading {
     required TResult Function(List<SymbolModel>? symbolsDataList)
         symbolsSuccess,
     required TResult Function(ApiErrorModel apiErrorModel) symbolsError,
-    required TResult Function(EventData eventData) symbolEventUpdated,
   }) {
     return symbolsLoading();
   }
@@ -278,7 +265,6 @@ class _$SymbolsLoadingImpl implements SymbolsLoading {
     TResult? Function()? symbolsLoading,
     TResult? Function(List<SymbolModel>? symbolsDataList)? symbolsSuccess,
     TResult? Function(ApiErrorModel apiErrorModel)? symbolsError,
-    TResult? Function(EventData eventData)? symbolEventUpdated,
   }) {
     return symbolsLoading?.call();
   }
@@ -290,7 +276,6 @@ class _$SymbolsLoadingImpl implements SymbolsLoading {
     TResult Function()? symbolsLoading,
     TResult Function(List<SymbolModel>? symbolsDataList)? symbolsSuccess,
     TResult Function(ApiErrorModel apiErrorModel)? symbolsError,
-    TResult Function(EventData eventData)? symbolEventUpdated,
     required TResult orElse(),
   }) {
     if (symbolsLoading != null) {
@@ -306,7 +291,6 @@ class _$SymbolsLoadingImpl implements SymbolsLoading {
     required TResult Function(SymbolsLoading value) symbolsLoading,
     required TResult Function(SymbolsSuccess value) symbolsSuccess,
     required TResult Function(SymbolsError value) symbolsError,
-    required TResult Function(SymbolEventUpdated value) symbolEventUpdated,
   }) {
     return symbolsLoading(this);
   }
@@ -318,7 +302,6 @@ class _$SymbolsLoadingImpl implements SymbolsLoading {
     TResult? Function(SymbolsLoading value)? symbolsLoading,
     TResult? Function(SymbolsSuccess value)? symbolsSuccess,
     TResult? Function(SymbolsError value)? symbolsError,
-    TResult? Function(SymbolEventUpdated value)? symbolEventUpdated,
   }) {
     return symbolsLoading?.call(this);
   }
@@ -330,7 +313,6 @@ class _$SymbolsLoadingImpl implements SymbolsLoading {
     TResult Function(SymbolsLoading value)? symbolsLoading,
     TResult Function(SymbolsSuccess value)? symbolsSuccess,
     TResult Function(SymbolsError value)? symbolsError,
-    TResult Function(SymbolEventUpdated value)? symbolEventUpdated,
     required TResult orElse(),
   }) {
     if (symbolsLoading != null) {
@@ -428,7 +410,6 @@ class _$SymbolsSuccessImpl implements SymbolsSuccess {
     required TResult Function(List<SymbolModel>? symbolsDataList)
         symbolsSuccess,
     required TResult Function(ApiErrorModel apiErrorModel) symbolsError,
-    required TResult Function(EventData eventData) symbolEventUpdated,
   }) {
     return symbolsSuccess(symbolsDataList);
   }
@@ -440,7 +421,6 @@ class _$SymbolsSuccessImpl implements SymbolsSuccess {
     TResult? Function()? symbolsLoading,
     TResult? Function(List<SymbolModel>? symbolsDataList)? symbolsSuccess,
     TResult? Function(ApiErrorModel apiErrorModel)? symbolsError,
-    TResult? Function(EventData eventData)? symbolEventUpdated,
   }) {
     return symbolsSuccess?.call(symbolsDataList);
   }
@@ -452,7 +432,6 @@ class _$SymbolsSuccessImpl implements SymbolsSuccess {
     TResult Function()? symbolsLoading,
     TResult Function(List<SymbolModel>? symbolsDataList)? symbolsSuccess,
     TResult Function(ApiErrorModel apiErrorModel)? symbolsError,
-    TResult Function(EventData eventData)? symbolEventUpdated,
     required TResult orElse(),
   }) {
     if (symbolsSuccess != null) {
@@ -468,7 +447,6 @@ class _$SymbolsSuccessImpl implements SymbolsSuccess {
     required TResult Function(SymbolsLoading value) symbolsLoading,
     required TResult Function(SymbolsSuccess value) symbolsSuccess,
     required TResult Function(SymbolsError value) symbolsError,
-    required TResult Function(SymbolEventUpdated value) symbolEventUpdated,
   }) {
     return symbolsSuccess(this);
   }
@@ -480,7 +458,6 @@ class _$SymbolsSuccessImpl implements SymbolsSuccess {
     TResult? Function(SymbolsLoading value)? symbolsLoading,
     TResult? Function(SymbolsSuccess value)? symbolsSuccess,
     TResult? Function(SymbolsError value)? symbolsError,
-    TResult? Function(SymbolEventUpdated value)? symbolEventUpdated,
   }) {
     return symbolsSuccess?.call(this);
   }
@@ -492,7 +469,6 @@ class _$SymbolsSuccessImpl implements SymbolsSuccess {
     TResult Function(SymbolsLoading value)? symbolsLoading,
     TResult Function(SymbolsSuccess value)? symbolsSuccess,
     TResult Function(SymbolsError value)? symbolsError,
-    TResult Function(SymbolEventUpdated value)? symbolEventUpdated,
     required TResult orElse(),
   }) {
     if (symbolsSuccess != null) {
@@ -589,7 +565,6 @@ class _$SymbolsErrorImpl implements SymbolsError {
     required TResult Function(List<SymbolModel>? symbolsDataList)
         symbolsSuccess,
     required TResult Function(ApiErrorModel apiErrorModel) symbolsError,
-    required TResult Function(EventData eventData) symbolEventUpdated,
   }) {
     return symbolsError(apiErrorModel);
   }
@@ -601,7 +576,6 @@ class _$SymbolsErrorImpl implements SymbolsError {
     TResult? Function()? symbolsLoading,
     TResult? Function(List<SymbolModel>? symbolsDataList)? symbolsSuccess,
     TResult? Function(ApiErrorModel apiErrorModel)? symbolsError,
-    TResult? Function(EventData eventData)? symbolEventUpdated,
   }) {
     return symbolsError?.call(apiErrorModel);
   }
@@ -613,7 +587,6 @@ class _$SymbolsErrorImpl implements SymbolsError {
     TResult Function()? symbolsLoading,
     TResult Function(List<SymbolModel>? symbolsDataList)? symbolsSuccess,
     TResult Function(ApiErrorModel apiErrorModel)? symbolsError,
-    TResult Function(EventData eventData)? symbolEventUpdated,
     required TResult orElse(),
   }) {
     if (symbolsError != null) {
@@ -629,7 +602,6 @@ class _$SymbolsErrorImpl implements SymbolsError {
     required TResult Function(SymbolsLoading value) symbolsLoading,
     required TResult Function(SymbolsSuccess value) symbolsSuccess,
     required TResult Function(SymbolsError value) symbolsError,
-    required TResult Function(SymbolEventUpdated value) symbolEventUpdated,
   }) {
     return symbolsError(this);
   }
@@ -641,7 +613,6 @@ class _$SymbolsErrorImpl implements SymbolsError {
     TResult? Function(SymbolsLoading value)? symbolsLoading,
     TResult? Function(SymbolsSuccess value)? symbolsSuccess,
     TResult? Function(SymbolsError value)? symbolsError,
-    TResult? Function(SymbolEventUpdated value)? symbolEventUpdated,
   }) {
     return symbolsError?.call(this);
   }
@@ -653,7 +624,6 @@ class _$SymbolsErrorImpl implements SymbolsError {
     TResult Function(SymbolsLoading value)? symbolsLoading,
     TResult Function(SymbolsSuccess value)? symbolsSuccess,
     TResult Function(SymbolsError value)? symbolsError,
-    TResult Function(SymbolEventUpdated value)? symbolEventUpdated,
     required TResult orElse(),
   }) {
     if (symbolsError != null) {
@@ -673,167 +643,5 @@ abstract class SymbolsError implements SymbolState {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SymbolsErrorImplCopyWith<_$SymbolsErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$SymbolEventUpdatedImplCopyWith<$Res> {
-  factory _$$SymbolEventUpdatedImplCopyWith(_$SymbolEventUpdatedImpl value,
-          $Res Function(_$SymbolEventUpdatedImpl) then) =
-      __$$SymbolEventUpdatedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({EventData eventData});
-}
-
-/// @nodoc
-class __$$SymbolEventUpdatedImplCopyWithImpl<$Res>
-    extends _$SymbolStateCopyWithImpl<$Res, _$SymbolEventUpdatedImpl>
-    implements _$$SymbolEventUpdatedImplCopyWith<$Res> {
-  __$$SymbolEventUpdatedImplCopyWithImpl(_$SymbolEventUpdatedImpl _value,
-      $Res Function(_$SymbolEventUpdatedImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of SymbolState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? eventData = null,
-  }) {
-    return _then(_$SymbolEventUpdatedImpl(
-      null == eventData
-          ? _value.eventData
-          : eventData // ignore: cast_nullable_to_non_nullable
-              as EventData,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$SymbolEventUpdatedImpl implements SymbolEventUpdated {
-  const _$SymbolEventUpdatedImpl(this.eventData);
-
-  @override
-  final EventData eventData;
-
-  @override
-  String toString() {
-    return 'SymbolState.symbolEventUpdated(eventData: $eventData)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SymbolEventUpdatedImpl &&
-            (identical(other.eventData, eventData) ||
-                other.eventData == eventData));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, eventData);
-
-  /// Create a copy of SymbolState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SymbolEventUpdatedImplCopyWith<_$SymbolEventUpdatedImpl> get copyWith =>
-      __$$SymbolEventUpdatedImplCopyWithImpl<_$SymbolEventUpdatedImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() symbolsLoading,
-    required TResult Function(List<SymbolModel>? symbolsDataList)
-        symbolsSuccess,
-    required TResult Function(ApiErrorModel apiErrorModel) symbolsError,
-    required TResult Function(EventData eventData) symbolEventUpdated,
-  }) {
-    return symbolEventUpdated(eventData);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? symbolsLoading,
-    TResult? Function(List<SymbolModel>? symbolsDataList)? symbolsSuccess,
-    TResult? Function(ApiErrorModel apiErrorModel)? symbolsError,
-    TResult? Function(EventData eventData)? symbolEventUpdated,
-  }) {
-    return symbolEventUpdated?.call(eventData);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? symbolsLoading,
-    TResult Function(List<SymbolModel>? symbolsDataList)? symbolsSuccess,
-    TResult Function(ApiErrorModel apiErrorModel)? symbolsError,
-    TResult Function(EventData eventData)? symbolEventUpdated,
-    required TResult orElse(),
-  }) {
-    if (symbolEventUpdated != null) {
-      return symbolEventUpdated(eventData);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(SymbolsLoading value) symbolsLoading,
-    required TResult Function(SymbolsSuccess value) symbolsSuccess,
-    required TResult Function(SymbolsError value) symbolsError,
-    required TResult Function(SymbolEventUpdated value) symbolEventUpdated,
-  }) {
-    return symbolEventUpdated(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(SymbolsLoading value)? symbolsLoading,
-    TResult? Function(SymbolsSuccess value)? symbolsSuccess,
-    TResult? Function(SymbolsError value)? symbolsError,
-    TResult? Function(SymbolEventUpdated value)? symbolEventUpdated,
-  }) {
-    return symbolEventUpdated?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(SymbolsLoading value)? symbolsLoading,
-    TResult Function(SymbolsSuccess value)? symbolsSuccess,
-    TResult Function(SymbolsError value)? symbolsError,
-    TResult Function(SymbolEventUpdated value)? symbolEventUpdated,
-    required TResult orElse(),
-  }) {
-    if (symbolEventUpdated != null) {
-      return symbolEventUpdated(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SymbolEventUpdated implements SymbolState {
-  const factory SymbolEventUpdated(final EventData eventData) =
-      _$SymbolEventUpdatedImpl;
-
-  EventData get eventData;
-
-  /// Create a copy of SymbolState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SymbolEventUpdatedImplCopyWith<_$SymbolEventUpdatedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

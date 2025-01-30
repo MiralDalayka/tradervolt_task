@@ -3,16 +3,14 @@ import 'package:json_annotation/json_annotation.dart';
 part 'event.g.dart';
 
 @JsonSerializable()
-class EventData {
+class EventDateResponse {
   final int eventType;
   final List<Price> value;
 
-  EventData({required this.eventType, required this.value});
+  EventDateResponse({required this.eventType, required this.value});
 
-  factory EventData.fromJson(Map<String, dynamic> json) =>
-      _$EventDataFromJson(json);
-
-  Map<String, dynamic> toJson() => _$EventDataToJson(this);
+  factory EventDateResponse.fromJson(Map<String, dynamic> json) =>
+      _$EventDateResponseFromJson(json);
 }
 
 @JsonSerializable()

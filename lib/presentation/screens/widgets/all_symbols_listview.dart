@@ -16,7 +16,10 @@ class _AllSymbolsListViewState extends State<AllSymbolsListView> {
     return ListView.builder(
       itemCount: widget.symbolsDataList.length,
       itemBuilder: (context, index) {
-        return SymbolCard(symbol: widget.symbolsDataList[index]);
+        var symbol = widget.symbolsDataList[index];
+        return SymbolCard(
+            key: ValueKey('${symbol.id}_${symbol.bid}_${symbol.ask}'),
+            symbol: symbol);
       },
     );
   }

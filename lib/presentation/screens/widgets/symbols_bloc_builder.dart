@@ -34,7 +34,6 @@ class SymbolsBlocBuilder extends StatelessWidget {
     );
   }
 
-  /// shimmer loading for symbols
   Widget setupLoading() {
     return const SymbolShimmerLoading();
   }

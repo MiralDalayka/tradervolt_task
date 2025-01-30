@@ -6,14 +6,16 @@ part of 'event.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-EventData _$EventDataFromJson(Map<String, dynamic> json) => EventData(
+EventDateResponse _$EventDateResponseFromJson(Map<String, dynamic> json) =>
+    EventDateResponse(
       eventType: (json['eventType'] as num).toInt(),
       value: (json['value'] as List<dynamic>)
           .map((e) => Price.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$EventDataToJson(EventData instance) => <String, dynamic>{
+Map<String, dynamic> _$EventDateResponseToJson(EventDateResponse instance) =>
+    <String, dynamic>{
       'eventType': instance.eventType,
       'value': instance.value,
     };

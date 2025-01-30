@@ -25,7 +25,7 @@ class AllSymbolsScreen extends StatelessWidget {
           IconButton(onPressed: () {}, icon: const Icon(Icons.add))
         ],
       ),
-      body: const SafeArea(
+      body: SafeArea(
         child: SymbolsBlocBuilder(),
       ),
       bottomNavigationBar: const BottomNavBar(),

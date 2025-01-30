@@ -6,22 +6,23 @@ import 'package:tradervolt_task/data/web_services/data_requests_body/symbols_req
 
 class SymbolCubit extends Cubit<SymbolState> {
   final SymbolRepo _symbolRepo;
-  SymbolCubit(this._symbolRepo) : super(const SymbolState.initial());
+  List<SymbolModel> symbolsList = [];
 
-  List<SymbolModel?>? sumbolsList = [];
+  SymbolCubit(this._symbolRepo) : super(const SymbolState.initial());
 
   void getSymbols() async {
     emit(const SymbolState.symbolsLoading());
     final response = await _symbolRepo.getSymbols(SymbolsRequest());
     response.when(
       success: (symbolsResponseModel) {
-        sumbolsList = symbolsResponseModel.symbolsList;
-
-        emit(SymbolState.symbolsSuccess(symbolsResponseModel.symbolsList));
+        symbolsList = symbolsResponseModel.symbolsList;
+        emit(SymbolState.symbolsSuccess(symbolsList));
       },
-      failure: (error) {
-        emit(SymbolState.symbolsError(error));
-      },
+      failure: (error) => emit(SymbolState.symbolsError(error)),
     );
+  }
+
+  void updateSymbols(List<SymbolModel> updatedSymbols) {
+    emit(SymbolsSuccess(updatedSymbols));
   }
 }

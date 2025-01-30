@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:tradervolt_task/data/models/event.dart';
-import 'package:tradervolt_task/data/models/symbol.dart';
 import 'package:tradervolt_task/data/web_services/api_constants.dart';
 import 'package:tradervolt_task/data/web_services/data_requests_body/symbols_request_body.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
@@ -32,39 +32,63 @@ class ApiServiceImpl implements ApiService {
   }
 }
 
-// @override
-// Future<Stream<SymbolsResponse>> fetchSymbols(
-//     SymbolsRequest symbolsRequestBody) async {
-//   final response = await _dio.post(
-//     ApiConstants.apiBaseUrl + ApiConstants.symbols,
-//     options: Options(method: 'POST', headers: ApiConstants.headers),
-//     data: json.encode({"clientId": symbolsRequestBody.clientId}),
-//   );
+abstract class SymbolEventsService {
+  void connectAndListen();
+  void dispose();
+}
 
-//   final symbols = response.data as List<dynamic>;
+class SymbolEventsServiceImp implements SymbolEventsService {
+  static final SymbolEventsServiceImp _singleton =
+      SymbolEventsServiceImp._internal();
 
-//   return Stream.fromIterable(
-//     symbols.map((data) => SymbolsResponse.fromJson([data])).toList(),
-//   );
-// }
+  factory SymbolEventsServiceImp() {
+    return _singleton;
+  }
 
-//TODO move this to defferant class
+  SymbolEventsServiceImp._internal();
 
-// class SymbolStateService {
-//   final WebSocketChannel channel;
+  final _socketResponse = StreamController<EventDateResponse>.broadcast();
 
-//   SymbolStateService()
-//       : channel =
-//             WebSocketChannel.connect(Uri.parse(ApiConstants.websocketUrl));
+  void Function(EventDateResponse) get addResponse => _socketResponse.sink.add;
 
-//   Stream<EventData> connectToWebSocket() {
-//     return channel.stream.map((data) {
-//       final jsonData = json.decode(data);
-//       return EventData.fromJson(jsonData);
-//     });
-//   }
+  Stream<EventDateResponse> get getResponse => _socketResponse.stream;
+  @override
+  void connectAndListen() async {
+    try {
+      final channel = WebSocketChannel.connect(
+        Uri.parse(
+            'ws://57.128.175.72:8080/ws?apikey=Aa123!@%23#'), //TODO change it
+      );
 
-//   void close() {
-//     channel.sink.close();
-//   }
-// }
+      await channel.ready;
+
+      channel.stream.listen(
+        (message) {
+          try {
+            final jsonResponse = jsonDecode(message);
+            final socketResponse = EventDateResponse.fromJson(jsonResponse);
+
+            addResponse(socketResponse);
+          } catch (e) {
+            log('Error parsing message: $e');
+          }
+        },
+        onError: (error) {
+          log('WebSocket error: $error');
+        },
+        onDone: () {
+          log('WebSocket closed');
+        },
+      );
+    } on WebSocketChannelException catch (e) {
+      log('WebSocket connection failed: ${e.message}');
+    } catch (e) {
+      log('Unexpected error: $e');
+    }
+  }
+
+  @override
+  void dispose() {
+    _socketResponse.close();
+  }
+}

@@ -9,14 +9,9 @@ part 'symbol_state.freezed.dart';
 @freezed
 class SymbolState with _$SymbolState {
   const factory SymbolState.initial() = _Initial;
-
-  // Symbols
   const factory SymbolState.symbolsLoading() = SymbolsLoading;
   const factory SymbolState.symbolsSuccess(List<SymbolModel>? symbolsDataList) =
       SymbolsSuccess;
   const factory SymbolState.symbolsError(ApiErrorModel apiErrorModel) =
       SymbolsError;
-
-  const factory SymbolState.symbolEventUpdated(EventData eventData) =
-      SymbolEventUpdated;
 }

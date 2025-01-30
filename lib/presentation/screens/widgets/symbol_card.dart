@@ -16,7 +16,6 @@ class SymbolCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Text(DAt, style: const TextStyle(fontSize: 12, color: Colors.grey)),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -41,15 +40,15 @@ class SymbolCard extends StatelessWidget {
                   Row(
                     children: [
                       Text(symbol.bid.toString(),
-                          style: const TextStyle(
+                          style: TextStyle(
                               fontSize: 18,
-                              color: Colors.red,
+                              color: Color(symbol.bidColor),
                               fontWeight: FontWeight.bold)),
                       const SizedBox(width: 10),
                       Text(symbol.ask.toString(),
-                          style: const TextStyle(
+                          style: TextStyle(
                               fontSize: 18,
-                              color: Colors.red,
+                              color: Color(symbol.bidColor),
                               fontWeight: FontWeight.bold)),
                     ],
                   ),
