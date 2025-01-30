@@ -57,7 +57,7 @@ class SymbolEventsServiceImp implements SymbolEventsService {
     try {
       final channel = WebSocketChannel.connect(
         Uri.parse(
-            'ws://57.128.175.72:8080/ws?apikey=Aa123!@%23#'), //TODO change it
+            websocketUrl +apiKeyHeader), //TODO change it
       );
 
       await channel.ready;
