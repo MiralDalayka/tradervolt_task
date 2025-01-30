@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'symbol.g.dart';
@@ -18,25 +17,22 @@ class SymbolModel {
   final int digits;
   final int spreadCalculation;
   final bool visible;
-  int bidColor = Colors.blue.toARGB32();
-  int askColor = Colors.blue.toARGB32();
 
-  SymbolModel(
-      {required this.id,
-      required this.name,
-      required this.bid,
-      required this.ask,
-      required this.high,
-      required this.low,
-      required this.spreadType,
-      required this.spreadValue,
-      required this.spreadBidBalance,
-      required this.spreadAskBalance,
-      required this.digits,
-      required this.spreadCalculation,
-      required this.visible,
-      bidColor,
-      askColor});
+  SymbolModel({
+    required this.id,
+    required this.name,
+    required this.bid,
+    required this.ask,
+    required this.high,
+    required this.low,
+    required this.spreadType,
+    required this.spreadValue,
+    required this.spreadBidBalance,
+    required this.spreadAskBalance,
+    required this.digits,
+    required this.spreadCalculation,
+    required this.visible,
+  });
 
   factory SymbolModel.fromJson(Map<String, dynamic> json) =>
       _$SymbolModelFromJson(json);
@@ -55,8 +51,6 @@ class SymbolModel {
     int? digits,
     int? spreadCalculation,
     bool? visible,
-    int? bidColor,
-    int? askColor,
   }) {
     return SymbolModel(
       id: id ?? this.id,
@@ -72,8 +66,6 @@ class SymbolModel {
       digits: digits ?? this.digits,
       spreadCalculation: spreadCalculation ?? this.spreadCalculation,
       visible: visible ?? this.visible,
-      bidColor: bidColor ?? this.bidColor,
-      askColor: askColor ?? this.askColor,
     );
   }
 }

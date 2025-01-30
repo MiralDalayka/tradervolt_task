@@ -56,8 +56,13 @@ class SymbolEventsServiceImp implements SymbolEventsService {
   void connectAndListen() async {
     try {
       final channel = WebSocketChannel.connect(
+<<<<<<< HEAD
+        Uri.parse(ApiConstants.websocketUrl +
+            ApiConstants.apiKeyHeader), //TODO change it
+=======
         Uri.parse(
             websocketUrl +apiKeyHeader), //TODO change it
+>>>>>>> 48a53bf273cd704842f546ddc860b32467802ba2
       );
 
       await channel.ready;

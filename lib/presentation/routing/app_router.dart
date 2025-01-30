@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tradervolt_task/business_logic/cubit/symbol_cubit.dart';
-import 'package:tradervolt_task/business_logic/cubit/symbol_state.dart';
 import 'package:tradervolt_task/business_logic/events/event_cubit.dart';
 import 'package:tradervolt_task/data/di.dart'; // Assuming you have DI setup with getIt()
 import 'package:tradervolt_task/presentation/screens/all_symbols.dart';
@@ -11,33 +10,17 @@ class AppRouter {
   Route generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.allSymbolsScreen:
+        final symbolCubit = SymbolCubit(getIt());
+        symbolCubit.getSymbols();
         return _route(
           MultiBlocProvider(
             providers: [
+              BlocProvider.value(value: symbolCubit),
               BlocProvider(
-                create: (context) {
-                  final symbolCubit = SymbolCubit(getIt());
-                  symbolCubit.getSymbols();
-                  return symbolCubit;
-                },
-              ),
-              BlocProvider(
-                create: (context) {
-                  final symbolCubit = context.read<SymbolCubit>();
-                  return EventsCubit(getIt(), symbolCubit);
-                },
+                create: (context) => EventsCubit(getIt(), symbolCubit),
               ),
             ],
-            child: BlocListener<SymbolCubit, SymbolState>(
-              listener: (context, state) {
-                if (state is SymbolsSuccess) {
-                  context.read<EventsCubit>()
-                    ..setSymbols(state.symbolsDataList ?? [])
-                    ..listenToEvents();
-                }
-              },
-              child: const AllSymbolsScreen(),
-            ),
+            child: const AllSymbolsScreen(),
           ),
         );
       default:
